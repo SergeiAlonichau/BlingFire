@@ -1,6 +1,6 @@
 import argparse
 import sys
-from blingfiretok import *
+from blingfire import *
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-m", "--model", default="./bert_base_tok.bin", help="bin file with compiled tokenization model")

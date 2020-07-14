@@ -258,6 +258,7 @@ public:
         PARAM_ACT_DATA,    // action data map
         PARAM_MAX_LENGTH,  // maximum length, e.g. maximum token length
         PARAM_VERIFY_LDB_BIN, // if specified, requires a CRC32-like check for the LDB file to pass
+        PARAM_TOKENIZATION_TYPE, // specifies which tokenization runtime should be used
         PARAM_COUNT,
     };
 
@@ -387,6 +388,18 @@ public:
         NORMALIZE_REMOVE_DIACRITICS = 2,
         NORMALIZE_COUNT,
     };
+
+    // segmentation model types
+    enum {
+        TOKENIZE_DEFAULT = 0,
+        TOKENIZE_WORDPIECE = 1,
+        TOKENIZE_UNIGRAM_LM = 2,
+        TOKENIZE_BPE = 3,
+        TOKENIZE_BPE_OPT = 4,     // optimized version of the BPE, prefers a single token match over
+                                  //  subtoken, assumes tokens are delimited with U+x2581 
+        TOKENIZE_COUNT,
+    };
+
 };
 
 #endif

@@ -54,6 +54,7 @@ public:
     const bool GetNoTrUse () const;
     const int GetDirection () const;
     const FAMultiMapCA * GetCharMap () const;
+    const int GetTokAlgo () const;
 
 private:
     // input LDB
@@ -68,12 +69,15 @@ private:
     // I2Info: multi-map
     FAMultiMap_pack * m_pI2Info_triv;
     FAMultiMap_pack_mph * m_pI2Info_mph;
+    FAMultiMap_pack_fixed * m_pI2Info_fixed;
     const FAMultiMapCA * m_pI2Info;
     // configuration options
     bool m_IgnoreCase;
     bool m_NoTrUse;
     int m_Direction;
     FAMultiMap_pack_fixed * m_pCharMap;
+    // indicates what runtime algo to use with these data
+    int m_TokAlgo;
 };
 
 #endif
